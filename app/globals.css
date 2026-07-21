@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --primary: 243 75% 59%; /* Indigo */
+    --secondary: 258 90% 66%; /* Violet */
+    --muted: 210 40% 96.1%;
+    --accent: 187 85% 43%; /* Cyan */
+    --border: 214.3 31.8% 91.4%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%; /* Slate 950 */
+    --foreground: 210 40% 98%;
+    --card: 222.2 47% 11%;
+    --primary: 243 75% 59%;
+    --secondary: 258 90% 66%;
+    --muted: 217.2 32.6% 17.5%;
+    --accent: 187 85% 43%;
+    --border: 217.2 32.6% 17.5%;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-card/60 backdrop-blur-xl border border-border/40;
+  }
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+  }
+  .skeleton {
+    @apply bg-gradient-to-r from-muted/50 via-muted to-muted/50 bg-[length:1000px_100%] animate-shimmer;
+  }
+}
